@@ -7,15 +7,13 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 public class DBConnect {
-	private static final String jdbcURL = "jdbc:mysql://localhost/dizionario";
+	private static final String jdbcURL = "jdbc:mysql://localhost/dizionario?user=root&password=4826";
 	private static HikariDataSource ds;
 	
 	public static Connection getConnection() {
 		if(ds == null) {
 			HikariConfig config = new HikariConfig();
 			config.setJdbcUrl(jdbcURL);
-			config.setUsername("root");
-			config.setPassword("rootroot");
 			
 			config.addDataSourceProperty("cachePrepStmts", true);
 			config.addDataSourceProperty("prepStmtChacheSize", 250);
